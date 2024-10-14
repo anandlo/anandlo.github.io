@@ -56,10 +56,6 @@
         font-weight: 500;
     }
 
-    /* Add hover effects */
-    .nav-links a:hover {
-        text-decoration: underline;
-    }
         /* Custom styles that can't be replaced by Tailwind
         .blur-top, .blur-bottom {
             position: fixed;
@@ -106,7 +102,7 @@
             margin-left: 8px;
             margin-right: 8px;
         }
-
+        
         
     </style>
 </head>
@@ -122,21 +118,21 @@
 
 <!-- Header Section -->
 <header class="bg-gray-900 bg-opacity-90 fixed w-full z-50 backdrop-blur-sm transition duration-500 ease-in-out">
-    <nav class="container mx-auto px-8 py-4 flex justify-between items-center">
+    <nav class="container mx-auto px-8 py-4 flex justify-between items-center space-y-4">
         <!-- Logo fixed to the left -->
         <div class="absolute left-0 pl-8">
             <h1 class="text-3xl font-bold hover:text-indigo-400 transition duration-300 cursor-pointer font-montserrat">Anand Lo</h1>
         </div>
         <!-- Navigation Menu aligned to the right -->
         <div class="ml-auto">
-            <ul class="nav-links hidden md:flex space-x-10 text-lg">
+            <ul class="hidden md:flex space-x-10 text-lg">
                 <li><a href="#about" class="hover:text-indigo-400 transition duration-300">About</a></li>
                 <li><a href="#experience" class="hover:text-indigo-400 transition duration-300">Experience</a></li>
                 <li><a href="#projects" class="hover:text-indigo-400 transition duration-300">Projects</a></li>
                 <li><a href="#skills" class="hover:text-indigo-400 transition duration-300">Skills</a></li>
                 <li><a href="#education" class="hover:text-indigo-400 transition duration-300">Education</a></li>
                 <li><a href="#leadership" class="hover:text-indigo-400 transition duration-300">Leadership</a></li>
-                <li><a href="#contact" class="hover:text-indigo-400 transition duration-300">Contact</a></li>
+                <!-- <li><a href="#contact" class="hover:text-indigo-400 transition duration-300">Contact</a></li> -->
             </ul>
         </div>
     </nav>
@@ -145,20 +141,27 @@
     <!-- Main Content -->
     <main>
         <!-- Home Section -->
-<section id="home" class="hero bg-cover bg-center h-screen flex items-center justify-center" style="background-image: url('hero-bg.jpg');">
+<!-- Home Section -->
+<section id="home" class="hero bg-cover bg-center h-screen flex flex-col items-center justify-center pt-16" style="background-image: url('hero-bg.jpg');">
+    <!-- Photo first -->
+    <div class="w-full lg:w-1/2 flex justify-center lg:justify-end space-y-6">
+        <img src="IMG_1124.jpeg" alt="Anand Lo" class="rounded-lg shadow-xl transform hover:scale-105 transition duration-500" width="500" height="500">
+    </div>
+
+    <!-- Text after the photo -->
     <div class="text-center text-white p-12 rounded-lg bg-opacity-70 backdrop-blur-lg animate-fade-in">
         <h2 class="text-7xl font-extrabold mb-4 tracking-tighter leading-tight">
-            <span id="typed-text"></span>
+            <span id="typed-text"></span> <!-- Placeholder for typed text effect -->
         </h2>
         <p class="text-2xl mb-8 font-light italic leading-relaxed">"So much to achieve and so little time left."</p>
-        <!-- <a href="#projects" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-4 px-14 rounded-full transition duration-300 transform hover:scale-105">View My Work</a> -->
     </div>
 </section>
+
 
 <!-- About Section -->
 <section id="about" class="about py-24 bg-gray-800">
     <div class="container mx-auto px-8 flex flex-col lg:flex-row items-center gap-16">
-        <div class="w-full lg:w-1/2 text-center lg:text-left pl-8"> <!-- Added padding-left class (pl-8) -->
+        <div class="w-full lg:w-1/2 text-center lg:text-left pl-8"> 
             <h2 class="text-6xl font-bold font-roboto text-indigo-400 mb-8">About Me</h2>
             <p class="text-xl font-light leading-relaxed text-gray-300">
                 I'm currently pursuing a <strong class="font-bold">Bachelor of Applied Computer Science</strong> at <strong class="font-bold">Dalhousie University</strong>, with a minor in <strong class="font-bold">Statistics</strong>. 
@@ -167,7 +170,7 @@
             
         </div>
         <div class="w-full lg:w-1/2 flex justify-center lg:justify-end">
-            <img src="IMG_1124.jpeg" alt="Anand Lo" class="rounded-lg shadow-xl transform hover:scale-105 transition duration-500" width="500" height="500">
+            <img src="IMG_1144.jpeg" alt="Anand Lo" class="rounded-lg shadow-xl transform hover:scale-105 transition duration-500" width="500" height="500">
         </div>
     </div>
 </section>
@@ -220,7 +223,7 @@
             </div>
             <!-- Project Item -->
             <div class="group bg-gray-800 p-8 rounded-lg shadow-2xl transform hover:scale-105 transition duration-500 hover:bg-indigo-600 hover:shadow-2xl">
-                <h3 class="text-5xl font-bold font-roboto mb-6 text-white">Breast Cancer Diagnosis Prediction</h3>
+                <h3 class="text-5xl font-bold font-roboto mb-6 text-white">Breast Cancer Diagnosis Classifier</h3>
                 <p class="text-lg font-light text-white-100 mb-6">Developed an SVM model to predict early-stage breast cancer using data from the University of California Machine Learning Repository, achieving 94.7% accuracy. Applied PCA for dimensionality reduction and optimized model sensitivity and specificity with GridSearchCV.</p>
                 <a href="https://github.com/anandlo/Predictive-Analytics-for-Breast-Cancer-Diagnosis" class="bg-indigo-600 text-white py-2 px-6 rounded-full hover:bg-yellow-500 transition duration-300 group-hover:bg-yellow-500">Learn More</a>
             </div>
@@ -347,7 +350,7 @@
                 <li><strong>Certificate in Data Analytics</strong>, <em>Certificate in Managing Data</em></li>
                 <li><span class="text-yellow-500 font-bold">Sexton Scholar</span> – Awarded for academic excellence</li>
                 <li><strong>Dean’s List</strong> – Consistently achieved top 10% of class</li>
-                <li>Recipient of the <strong class="text-yellow-500">General Entrance Scholarship</strong> and the <em>Computer Science Faculty Scholarship</em> for outstanding performance</li>
+                <li>Recipient of the <strong class="text-yellow-500">General Entrance Scholarship</strong> and the <strong class="text-yellow-500">Computer Science Faculty Scholarship</strong> for outstanding performance</li>
             </ul>
         </div>
     </div>
@@ -366,8 +369,8 @@
                 <h3 class="text-4xl font-bold font-roboto mb-4 text-white">Student Representative</h3>
                 <p class="text-lg font-light text-gray-300 mb-6">Computer Science Society | April 2023 – Present</p>
                 <ul class="list-disc ml-5 text-lg text-gray-300 space-y-2">
-                    <li><strong class="text-yellow-500">Increased student engagement by 25%</strong> by organizing over 15 events, including hackathons and networking sessions.</li>
-                    <li>Led <em>10+ feedback sessions</em>, driving academic improvements and fostering <strong>stronger student-faculty communication</strong>.</li>
+                    <li><strong class="text-yellow-500">Advocated for student needs</strong> by holding regular meetings with the dean and faculty, ensuring that student concerns were addressed and academic policies were improved.</li>
+                    <li><strong class="text-yellow-500">Assigned and managed over 40 course representatives</strong> across multiple courses, coordinating follow-ups and ensuring effective communication between students and faculty.</li>
                 </ul>
             </div>
 
@@ -463,7 +466,7 @@
     
                 // Initialize Typed.js for the typing effect
                 var typed = new Typed('#typed-text', {
-                    strings: ["Bright Ideas, Brighter Smiles!", "Curious Mind, Always Learning", "Always Asking 'What’s Next?'"],
+                    strings: ["Bright Ideas, Brighter Smiles!", "Always Asking 'What’s Next?'"],
                     typeSpeed: 150,
                     backSpeed: 50,
                     backDelay: 2000, // Adds a 2-second pause before deleting
