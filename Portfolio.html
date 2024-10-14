@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta Tags for SEO and Responsive Design -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta description="Anand Lo's portfolio showcasing projects, skills, and experience in data science and AI.">
+    <meta name="description" content="Anand Lo's portfolio showcasing projects, skills, and experience in data science and AI.">
+    <meta property="og:title" content="Anand Lo - Portfolio">
+    <meta property="og:description" content="Data Science Enthusiast & Applied AI Innovator">
+    <meta property="og:image" content="hero-bg.jpg">
+
+    <title>Anand Lo - Portfolio</title>
+
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@^2.2/dist/tailwind.min.css" integrity="sha384-..." crossorigin="anonymous">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Update font links as needed -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Alpine.js for interactivity -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- GSAP for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/ScrollTrigger.min.js" defer></script>
+
+    <!-- Custom Styles -->
+    <style>
+        /* Make the logo fixed to the left */
+    .logo {
+        position: left;
+        left: 0;
+        padding-left: 50px;
+    }
+
+    /* Ensure the navigation menu is on the right */
+    .nav-links {
+        margin-right: 20px;
+    }
+
+    
+
+    .nav-links li {
+        margin-left: 20px;
+    }
+
+    /* Ensure navigation is styled properly */
+    .nav-links a {
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.125rem;
+        font-weight: 500;
+    }
+
+    /* Add hover effects */
+    .nav-links a:hover {
+        text-decoration: underline;
+    }
+        /* Custom styles that can't be replaced by Tailwind
+        .blur-top, .blur-bottom {
+            position: fixed;
+            left: 0;
+            right: 0;
+            height: 10px;
+            z-index: 100;
+            pointer-events: none;
+        } */
+        .blur-top {
+            top: 0;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.5), transparent);
+        }
+        .blur-bottom {
+            bottom: 0;
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), transparent);
+        }
+        .animate-fade-in {
+            animation: fadeIn 1.5s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .icon-style {
+            filter: brightness(0) invert(1); /* Makes the icon white */
+            transition: all 0.3s ease-in-out;
+            width: 30px;
+            height: 30px;
+        }
+
+        .icon-style:hover {
+            filter: brightness(0) invert(0.5); /* Darkens on hover */
+            transform: scale(1.1); /* Slight zoom on hover */
+        }
+
+        .flex {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .space-x-8 > * {
+            margin-left: 8px;
+            margin-right: 8px;
+        }
+
+        
+    </style>
+</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+<body class="font-montserrat bg-gray-900 text-white">
+    
+    <!-- Top and Bottom Blurs -->
+    <div class="blur-top"></div>
+    <div class="blur-bottom"></div>
+
+<!-- Header Section -->
+<header class="bg-gray-900 bg-opacity-90 fixed w-full z-50 backdrop-blur-sm transition duration-500 ease-in-out">
+    <nav class="container mx-auto px-8 py-4 flex justify-between items-center">
+        <!-- Logo fixed to the left -->
+        <div class="absolute left-20 pl-8">
+            <h1 class="text-3xl font-bold hover:text-indigo-400 transition duration-300 cursor-pointer font-montserrat">Anand Lo</h1>
+        </div>
+        <!-- Navigation Menu aligned to the right -->
+        <div class="ml-auto">
+            <ul class="nav-links hidden md:flex space-x-10 text-lg">
+                <li><a href="#about" class="hover:text-indigo-400 transition duration-300">About</a></li>
+                <li><a href="#experience" class="hover:text-indigo-400 transition duration-300">Experience</a></li>
+                <li><a href="#projects" class="hover:text-indigo-400 transition duration-300">Projects</a></li>
+                <li><a href="#skills" class="hover:text-indigo-400 transition duration-300">Skills</a></li>
+                <li><a href="#education" class="hover:text-indigo-400 transition duration-300">Education</a></li>
+                <li><a href="#leadership" class="hover:text-indigo-400 transition duration-300">Leadership</a></li>
+                <li><a href="#contact" class="hover:text-indigo-400 transition duration-300">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Home Section -->
+<section id="home" class="hero bg-cover bg-center h-screen flex items-center justify-center" style="background-image: url('hero-bg.jpg');">
+    <div class="text-center text-white p-12 rounded-lg bg-opacity-70 backdrop-blur-lg animate-fade-in">
+        <h2 class="text-7xl font-extrabold mb-4 tracking-tighter leading-tight">
+            <span id="typed-text"></span>
+        </h2>
+        <p class="text-2xl mb-8 font-light italic leading-relaxed">"So much to achieve and so little time left."</p>
+        <!-- <a href="#projects" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-4 px-14 rounded-full transition duration-300 transform hover:scale-105">View My Work</a> -->
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="about py-24 bg-gray-800">
+    <div class="container mx-auto px-8 flex flex-col lg:flex-row items-center gap-16">
+        <div class="w-full lg:w-1/2 text-center lg:text-left pl-8"> <!-- Added padding-left class (pl-8) -->
+            <h2 class="text-6xl font-bold font-roboto text-indigo-400 mb-8">About Me</h2>
+            <p class="text-xl font-light leading-relaxed text-gray-300">
+                I'm currently pursuing a <strong class="font-bold">Bachelor of Applied Computer Science</strong> at <strong class="font-bold">Dalhousie University</strong>, with a minor in <strong class="font-bold">Statistics</strong>. 
+                I enjoy exploring new technologies and finding creative ways to solve problems. In my free time, I love <em class="text-yellow-500 italic">swimming</em>, <em class="text-yellow-500 italic">playing badminton</em>, and <em class="text-yellow-500 italic">listening to music</em>. These activities help me stay balanced and fuel my curiosity for learning and discovery.
+            </p>
+            
+        </div>
+        <div class="w-full lg:w-1/2 flex justify-center lg:justify-end">
+            <img src="IMG_1124.jpeg" alt="Anand Lo" class="rounded-lg shadow-xl transform hover:scale-105 transition duration-500" width="500" height="500">
+        </div>
+    </div>
+</section>
+
+
+        <!-- Experience Section -->
+<section id="experience" class="experience py-24 bg-gray-900">
+    <div class="container mx-auto px-8">
+        <h2 class="text-6xl font-bold font-roboto mb-16 text-center text-indigo-400">Experience</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+            <!-- Experience Item -->
+            <div class="bg-gray-800 p-10 rounded-lg shadow-lg transform hover:scale-105 transition duration-500">
+                <h3 class="text-4xl font-bold font-roboto mb-4 text-white">Junior Developer</h3>
+                <p class="text-lg font-light text-gray-300 mb-6">
+                    <strong class="font-bold">Neuroimaging Probe Placement (NPP)</strong> | <em>January 2023 - April 2023</em> | <em>Halifax, NS</em>
+                </p>
+                <ul class="list-disc ml-5 text-lg text-gray-300 space-y-2">
+                    <li><strong>Led a team of 7</strong> in developing a non-invasive brain mapping solution, advancing neuroscience research at <strong class="font-bold">Dalhousie University</strong>.</li>
+                    <li>Engineered a <em class="text-yellow-500 italic">CNN model</em> with 87% precision, detecting over 450 facial landmarks using <em class="text-yellow-500 italic">MediaPipe</em> and <em class="text-yellow-500 italic">OpenCV</em> for optimized image preprocessing.</li>
+                    <li>Improved system accuracy from 73% to 81% through iterative model refinements, data augmentation, and deployed the solution on <em class="text-yellow-500 italic">AWS ECS using Docker</em>, reducing inference time by 40%.</li>
+                </ul>
+            </div>
+            <!-- Experience Item -->
+            <div class="bg-gray-800 p-10 rounded-lg shadow-lg transform hover:scale-105 transition duration-500">
+                <h3 class="text-4xl font-bold font-roboto mb-4 text-white">Project Lead</h3>
+                <p class="text-lg font-light text-gray-300 mb-6">
+                    <strong class="font-bold">Farmalytics</strong> | <em>October 2022</em> | <em>Halifax, NS</em>
+                </p>
+                <ul class="list-disc ml-5 text-lg text-gray-300 space-y-2">
+                    <li><strong>Led a team of 5</strong> in developing a satellite-driven platform for the <strong class="font-bold">NASA Space Apps Hackathon</strong>, delivering real-time insights that optimized irrigation and reduced contamination risks for farmers.</li>
+                    <li>Engineered a high-performance data pipeline using <em class="text-yellow-500 italic">Pandas</em>, <em class="text-yellow-500 italic">NumPy</em>, and <em class="text-yellow-500 italic">Scikit-learn</em> to process over 1TB of NASA Earth Observation data, and implemented an <em class="text-yellow-500 italic">XGBoost</em> model achieving an <strong>R² of 0.83</strong>, surpassing the baseline accuracy by 25%.</li>
+                    <li>Developed an accessible, farmer-centric front-end interface using <em class="text-yellow-500 italic">HTML</em>, <em class="text-yellow-500 italic">CSS</em>, and <em class="text-yellow-500 italic">JavaScript</em>, integrating an NLP pipeline to translate complex data into actionable risk scores, ensuring seamless usability for non-technical users.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+       <!-- Projects Section -->
+<section id="projects" class="projects py-24 bg-gray-800">
+    <div class="container mx-auto px-8">
+        <h2 class="text-6xl font-bold font-roboto mb-16 text-center text-indigo-400">Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
+            <!-- Project Item -->
+            <div class="group bg-gray-800 p-8 rounded-lg shadow-2xl transform hover:scale-105 transition duration-500 hover:bg-indigo-600 hover:shadow-2xl">
+                <h3 class="text-5xl font-bold font-roboto mb-6 text-white">Falcon 9 Landing Prediction</h3>
+                <p class="text-lg font-light text-white-100 mb-6">Developed SVM, Decision Tree, and Logistic Regression models to predict SpaceX Falcon 9 landings, achieving 88.92% accuracy with Decision Trees.</p>
+                <a href="https://github.com/anandlo/SpaceX-Landing-Prediction-Project" class="bg-indigo-600 text-white py-2 px-6 rounded-full hover:bg-yellow-500 transition duration-300 group-hover:bg-yellow-500">Learn More</a>
+            </div>
+            <!-- Project Item -->
+            <div class="group bg-gray-800 p-8 rounded-lg shadow-2xl transform hover:scale-105 transition duration-500 hover:bg-indigo-600 hover:shadow-2xl">
+                <h3 class="text-5xl font-bold font-roboto mb-6 text-white">Breast Cancer Diagnosis Prediction</h3>
+                <p class="text-lg font-light text-white-100 mb-6">Developed an SVM model to predict early-stage breast cancer using data from the University of California Machine Learning Repository, achieving 94.7% accuracy. Applied PCA for dimensionality reduction and optimized model sensitivity and specificity with GridSearchCV.</p>
+                <a href="https://github.com/anandlo/Predictive-Analytics-for-Breast-Cancer-Diagnosis" class="bg-indigo-600 text-white py-2 px-6 rounded-full hover:bg-yellow-500 transition duration-300 group-hover:bg-yellow-500">Learn More</a>
+            </div>
+            <!-- Project Item -->
+            <div class="group bg-gray-800 p-8 rounded-lg shadow-2xl transform hover:scale-105 transition duration-500 hover:bg-indigo-600 hover:shadow-2xl">
+                <h3 class="text-5xl font-bold font-roboto mb-6 text-white">Event Management Platform</h3>
+                <p class="text-lg font-light text-white-100 mb-6">Developed a PHP-based platform for managing events, integrating user authentication, dynamic forms, and CRUD operations with a focus on web security.</p>
+                <a href="https://github.com/yourusername/event-management-platform" class="bg-indigo-600 text-white py-2 px-6 rounded-full hover:bg-yellow-500 transition duration-300 group-hover:bg-yellow-500">Learn More</a>
+            </div>
+            <!-- Project Item -->
+            <div class="group bg-gray-800 p-8 rounded-lg shadow-2xl transform hover:scale-105 transition duration-500 hover:bg-indigo-600 hover:shadow-2xl">
+                <h3 class="text-5xl font-bold font-roboto mb-6 text-white">Diamond Price Analysis with Snowflake</h3>
+                <p class="text-lg font-light text-white-100 mb-6">Built an XGBoost regression model in Snowflake to promote transparency in diamond pricing, achieving an R² score of 98.36. Applied feature engineering with Snowpark and deployed the model as a Vectorized UDF for efficient data processing.</p>
+                <a href="https://github.com/anandlo/Diamond-Prediction-using-Snowflake-and-Snowpark-ML" class="bg-indigo-600 text-white py-2 px-6 rounded-full hover:bg-yellow-500 transition duration-300 group-hover:bg-yellow-500">Learn More</a>
+            </div>
+            <!-- Project Item -->
+            <div class="group bg-gray-800 p-8 rounded-lg shadow-2xl transform hover:scale-105 transition duration-500 hover:bg-indigo-600 hover:shadow-2xl">
+                <h3 class="text-5xl font-bold font-roboto mb-6 text-white">ISS Overhead Notifier</h3>
+                <p class="text-lg font-light text-white-100 mb-6">A Python-based application that notifies users when the International Space Station (ISS) is passing overhead. Utilized APIs to track ISS location and user location to provide real-time notifications.</p>
+                <a href="https://github.com/anandlo/ISS_Overhead_Notifier_Project" class="bg-indigo-600 text-white py-2 px-6 rounded-full hover:bg-yellow-500 transition duration-300 group-hover:bg-yellow-500">Learn More</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+ <!-- Skills Section -->
+<section id="skills" class="skills py-14 bg-gray-900">
+    <div class="container mx-auto px-8">
+        <h2 class="text-6xl font-bold font-roboto mb-16 text-center text-indigo-400">Skills</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            <!-- Skill Item -->
+            <div class="bg-gray-900 p-10 rounded-lg shadow-2xl transform hover:scale-105 transition duration-500 hover:bg-indigo-600 hover:shadow-2xl">
+                <h4 class="text-3xl font-bold font-roboto mb-4 text-white">Programming Languages</h4>
+                <p class="text-lg font-light text-gray-300">Python, R, SQL, C, Java, React, Swift, Flask, PHP, JavaScript, HTML/CSS</p>
+            </div>
+            <!-- Skill Item -->
+            <div class="bg-gray-900 p-10 rounded-lg shadow-2xl transform hover:scale-105 transition duration-500 hover:bg-indigo-600 hover:shadow-2xl">
+                <h4 class="text-3xl font-bold font-roboto mb-4 text-white">Tools</h4>
+                <p class="text-lg font-light text-gray-300">TensorFlow, PyTorch, Scikit-Learn, NumPy, Pandas, MediaPipe, Seaborn, MATLAB, Folium</p>
+            </div>
+            <!-- Skill Item -->
+            <div class="bg-gray-900 p-10 rounded-lg shadow-2xl transform hover:scale-105 transition duration-500 hover:bg-indigo-600 hover:shadow-2xl">
+                <h4 class="text-3xl font-bold font-roboto mb-4 text-white">Technologies</h4>
+                <p class="text-lg font-light text-gray-300">AWS, Docker, Kubernetes, Snowpark ML, Snowflake, Tableau, Power BI, Google Looker, Jira, Confluence, Git</p>
+            </div>
+            <!-- Skill Item -->
+            <div class="bg-gray-900 p-10 rounded-lg shadow-2xl transform hover:scale-105 transition duration-500 hover:bg-indigo-600 hover:shadow-2xl">
+                <h4 class="text-3xl font-bold font-roboto mb-4 text-white">Soft Skills</h4>
+                <p class="text-lg font-light text-gray-300">Communication, Collaboration, Analytical Thinking, Independent Work, Scheduling, Project Management</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Certificates & Hackathons Section -->
+<section id="certificates-hackathons" class="certificates py-14 bg-gray-800">
+    <div class="container mx-auto px-8">
+        <h2 class="text-6xl font-bold font-roboto mb-16 text-center text-indigo-400">Certificates & Hackathons</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+           <!-- Certificates Item -->
+           <div class="bg-gray-800 p-10 rounded-lg shadow-2xl transform hover:scale-105 transition duration-500 hover:bg-gray-900 hover:shadow-2xl">
+            <h4 class="text-3xl font-bold font-roboto mb-4 text-white">Certifications</h4>
+            <ul class="text-lg font-light list-none text-gray-300 space-y-8">
+                <li class="flex items-center justify-start"> <!-- Ensure left alignment -->
+                    <img src="IBM.png" alt="IBM Logo" class="w-12 h-12 mr-4 filter invert"> <!-- IBM Logo -->
+                    <a href="https://coursera.org/share/97da0bb966c2ff8a892d0cc3348759cd" class="text-white hover:text-yellow-500 hover:underline">
+                        IBM Data Science Certified
+                    </a>
+                </li>
+                <li class="flex items-center justify-start"> <!-- Ensure left alignment -->
+                    <img src="icons8-aws-logo-512.png" alt="AWS Logo" class="w-14 h-14 mr-4"> <!-- AWS Logo -->
+                    <a href="https://www.credly.com/badges/02a9b74c-8706-42fd-aac7-f1bf56de5493/linked_in_profile" class="text-white hover:text-yellow-500 hover:underline">
+                        AWS Cloud Practitioner
+                    </a>
+                </li>
+                <li class="flex items-center justify-start"> <!-- Ensure left alignment -->
+                    <img src="azure.png" alt="Azure Logo" class="w-12 h-12 mr-4"> <!-- Azure Logo -->
+                    <a href="https://coursera.org/share/f326e9c44d3c4619bbbf4dffe3b9f3ff" class="text-white hover:text-yellow-500 hover:underline">
+                        Azure DevOps Boards
+                    </a>
+                </li>
+                <li class="flex items-center justify-start"> <!-- Ensure left alignment -->
+                    <img src="IBM.png" alt="IBM Logo" class="w-12 h-12 mr-4 filter invert"> <!-- IBM Logo -->
+                    <a href="https://coursera.org/share/16715908317ef2338c8448b83759ba83" class="text-white hover:text-yellow-500 hover:underline">
+                        IBM Introduction to Containers w/ Docker, Kubernetes & OpenShift
+                    </a>
+                </li>
+            </ul>
+        </div>
+        
+            
+            <!-- Hackathons Item -->
+            <div class="bg-gray-800 p-10 rounded-lg shadow-2xl transform hover:scale-105 transition duration-500 hover:bg-gray-900 hover:shadow-2xl">
+                <h4 class="text-3xl font-bold font-roboto mb-6 text-white">Hackathon Participation</h4>
+                <ul class="text-lg font-light text-gray-300 space-y-4">
+                    <li><strong class="text-yellow-500 italic">NASA Space Apps 2023 (Winner)</strong> | Developed a full-stack exoplanet visualization platform using <em>Python</em> & <em>Flask</em></li>
+                    <li><strong class="text-yellow-500 italic">NASA Space Apps 2024</strong> | Advanced data analysis solutions for space exploration</li>
+                    <li><strong class="text-yellow-500 italic">DeepSense Hackathon</strong> | Leveraged ocean data for environmental insights</li>
+                    <li><strong class="text-yellow-500 italic">Ocean of Data Hackathon</strong> | Designed data-driven solutions to optimize marine sustainability</li>
+                    <li><strong class="text-yellow-500 italic">Deloitte Ideathon</strong> | Innovated ideas for industry-specific challenges</li>
+                    <li><strong class="text-yellow-500 italic">RBC Innovative Challenge</strong> | Explored tech solutions for financial sector problems</li>
+                    <li><strong class="text-yellow-500 italic">ShiftKey Labs Gen AI Hackathon</strong> | Built AI models to enhance productivity and automation</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Education Section -->
+<section id="education" class="education py-16 bg-gray-900"> 
+    <div class="container mx-auto px-6 max-w-6xl"> 
+        <h2 class="text-6xl font-bold font-roboto mb-16 text-center text-indigo-400">Education</h2>
+        <div class="bg-gray-800 shadow-lg p-8 rounded-lg transform hover:scale-105 transition duration-500 hover:bg-indigo-600 hover:shadow-2xl"> 
+            <h3 class="text-3xl font-bold font-roboto mb-4 text-white">Dalhousie University</h3>
+            <p class="text-md font-light text-gray-300 mb-4">
+                <strong class="text-white">Bachelor of Applied Computer Science</strong>, Minor in <em>Statistics</em> 
+                <span class="text-yellow-500">(GPA: 3.86)</span><br>
+                <span class="text-gray-400 italic">September 2022 – Present (Expected 2026)</span>
+            </p>
+            <ul class="list-disc ml-5 text-md text-gray-300 space-y-2">
+                <li><strong>Certificate in Data Analytics</strong>, <em>Certificate in Managing Data</em></li>
+                <li><span class="text-yellow-500 font-bold">Sexton Scholar</span> – Awarded for academic excellence</li>
+                <li><strong>Dean’s List</strong> – Consistently achieved top 10% of class</li>
+                <li>Recipient of the <strong class="text-yellow-500">General Entrance Scholarship</strong> and the <em>Computer Science Faculty Scholarship</em> for outstanding performance</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+
+
+       <!-- Leadership Section -->
+<section id="leadership" class="leadership py-24 bg-gray-800">
+    <div class="container mx-auto px-8">
+        <h2 class="text-6xl font-bold font-roboto mb-16 text-center text-indigo-400">Leadership</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+            <!-- Leadership Item - Student Representative -->
+            <div class="bg-gray-800 p-10 rounded-lg shadow-lg transform hover:scale-105 transition duration-500 hover:bg-gray-900">
+                <h3 class="text-4xl font-bold font-roboto mb-4 text-white">Student Representative</h3>
+                <p class="text-lg font-light text-gray-300 mb-6">Computer Science Society | April 2023 – Present</p>
+                <ul class="list-disc ml-5 text-lg text-gray-300 space-y-2">
+                    <li><strong class="text-yellow-500">Increased student engagement by 25%</strong> by organizing over 15 events, including hackathons and networking sessions.</li>
+                    <li>Led <em>10+ feedback sessions</em>, driving academic improvements and fostering <strong>stronger student-faculty communication</strong>.</li>
+                </ul>
+            </div>
+
+            <!-- Leadership Item - Peer Mentor -->
+            <div class="bg-gray-800 p-10 rounded-lg shadow-lg transform hover:scale-105 transition duration-500 hover:bg-gray-900">
+                <h3 class="text-4xl font-bold font-roboto mb-4 text-white">Peer Mentor</h3>
+                <p class="text-lg font-light text-gray-300 mb-6">Together@Dal Mentorship Program | August 2023 – Present</p>
+                <ul class="list-disc ml-5 text-lg text-gray-300 space-y-2">
+                    <li>Mentored <em>over 30 first-year students</em>, achieving a <strong class="text-yellow-500">95% satisfaction rate</strong> among mentees.</li>
+                    <li>Led bi-weekly mentoring sessions focused on <strong class="text-yellow-500">SMART goals</strong>, improving mentees' average GPA by <em>20%</em>.</li>
+                </ul>
+            </div>
+
+            <!-- Leadership Item - Team Leader at McDonald's -->
+            <div class="bg-gray-800 p-10 rounded-lg shadow-lg transform hover:scale-105 transition duration-500 hover:bg-gray-900">
+                <h3 class="text-4xl font-bold font-roboto mb-4 text-white">Team Leader</h3>
+                <p class="text-lg font-light text-gray-300 mb-6">McDonald's | October 2022 – Present</p>
+                <ul class="list-disc ml-5 text-lg text-gray-300 space-y-2">
+                    <li><strong>Led and coordinated teams</strong> during peak hours to ensure smooth operations and <em>customer satisfaction</em>.</li>
+                    <li>Trained new employees on <strong>customer service best practices</strong>, improving efficiency by <strong class="text-yellow-500">15%</strong>.</li>
+                    <li>Managed daily <em>cash flow</em> and inventory, contributing to improved <strong>financial accountability</strong>.</li>
+                </ul>
+            </div>
+
+            <!-- Leadership Item - International Students Representative -->
+            <div class="bg-gray-800 p-10 rounded-lg shadow-lg transform hover:scale-105 transition duration-500 hover:bg-gray-900">
+                <h3 class="text-4xl font-bold font-roboto mb-4 text-white">International Students Representative</h3>
+                <p class="text-lg font-light text-gray-300 mb-6">Dalhousie Student Union (DSU) | November 2023 – April 2024</p>
+                <ul class="list-disc ml-5 text-lg text-gray-300 space-y-2">
+                    <li><em>Advocated for over 1,000 international students</em> by managing inclusivity programs and distributing <strong class="text-yellow-500">300+ emergency bursaries</strong>.</li>
+                    <li>Collaborated on <em>financial aid enhancements</em>, resulting in a <strong class="text-yellow-500">40% boost in student satisfaction</strong> and academic experience.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact py-24 bg-gray-900">
+            <div class="container mx-auto px-8 text-center">
+                <h2 class="text-6xl font-bold font-roboto mb-16 text-indigo-400">Contact Me</h2>
+                <p class="text-xl font-light text-gray-300 mb-8">Feel free to reach out if you're interested in working with me or just want to connect.</p>
+                <!-- Contact Form -->
+                <form action="your_form_processing_script" method="POST" class="max-w-md mx-auto">
+                    <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 mb-4 bg-gray-900 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400">
+                    <input type="email" name="email" placeholder="Your Email" required class="w-full p-3 mb-4 bg-gray-900 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400">
+                    <textarea name="message" placeholder="Your Message" required class="w-full p-3 mb-4 bg-gray-900 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"></textarea>
+                    <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+<!-- Footer Section -->
+<!-- Footer Section -->
+<footer class="bg-gray-800 text-gray-300 py-12">
+    <div class="container mx-auto text-center">
+        <div class="mb-4 flex justify-center items-center space-x-8">
+            <!-- Social Media Links with Icons -->
+            <a href="https://www.linkedin.com/in/yourprofile" class="mx-4" target="_blank" rel="noopener noreferrer">
+                <img src="linkedin.svg" alt="LinkedIn" class="icon-style" width="30" height="30">
+            </a>
+            <a href="https://github.com/yourusername" class="mx-4" target="_blank" rel="noopener noreferrer">
+                <img src="github.svg" alt="GitHub" class="icon-style" width="30" height="30">
+            </a>
+        </div>
+        <p></p>
+        <p class="text-lg">&copy; 2023 Anand Lo. All rights reserved.</p>
+    </div>
+</footer>
+
+    
+    <!-- Encapsulated GSAP Animations -->
+    <script>
+        (function() {
+            document.addEventListener('DOMContentLoaded', function() {
+                // Header Background Change on Scroll
+                window.addEventListener('scroll', function() {
+                    if (window.scrollY > 50) {
+                        document.querySelector('header').classList.add('bg-gray-900', 'bg-opacity-80');
+                    } else {
+                        document.querySelector('header').classList.remove('bg-gray-900', 'bg-opacity-80');
+                    }
+                });
+    
+                // GSAP Animations
+                gsap.from(".hero .text-center", { duration: 1.5, y: -50, opacity: 0, ease: "power3.out" });
+                gsap.from(".nav-links li", { duration: 1, y: -20, opacity: 0, stagger: 0.2, ease: "power3.out" });
+                gsap.from(".about img", { duration: 1.5, x: 100, opacity: 0, ease: "power3.out", scrollTrigger: "#about" });
+    
+                // Initialize Typed.js for the typing effect
+                var typed = new Typed('#typed-text', {
+                    strings: ["Bright Ideas, Brighter Smiles!", "Curious Mind, Always Learning", "Always Asking 'What’s Next?'"],
+                    typeSpeed: 180,
+                    backSpeed: 70,
+                    backDelay: 2000, // Adds a 2-second pause before deleting
+                    loop: true,
+                    smartBackspace: true
+                });
+            });
+        })();
+    </script>
+    
+    <!-- Include Typed.js Library -->
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+</body>
+</html>
