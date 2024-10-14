@@ -124,7 +124,7 @@
 <header class="bg-gray-900 bg-opacity-90 fixed w-full z-50 backdrop-blur-sm transition duration-500 ease-in-out">
     <nav class="container mx-auto px-8 py-4 flex justify-between items-center">
         <!-- Logo fixed to the left -->
-        <div class="absolute left-20 pl-8">
+        <div class="absolute left-0 pl-8">
             <h1 class="text-3xl font-bold hover:text-indigo-400 transition duration-300 cursor-pointer font-montserrat">Anand Lo</h1>
         </div>
         <!-- Navigation Menu aligned to the right -->
@@ -407,20 +407,21 @@
 
 
 
-        <!-- Contact Section -->
-        <section id="contact" class="contact py-24 bg-gray-900">
-            <div class="container mx-auto px-8 text-center">
-                <h2 class="text-6xl font-bold font-roboto mb-16 text-indigo-400">Contact Me</h2>
-                <p class="text-xl font-light text-gray-300 mb-8">Feel free to reach out if you're interested in working with me or just want to connect.</p>
-                <!-- Contact Form -->
-                <form action="your_form_processing_script" method="POST" class="max-w-md mx-auto">
-                    <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 mb-4 bg-gray-900 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400">
-                    <input type="email" name="email" placeholder="Your Email" required class="w-full p-3 mb-4 bg-gray-900 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400">
-                    <textarea name="message" placeholder="Your Message" required class="w-full p-3 mb-4 bg-gray-900 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"></textarea>
-                    <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">Send Message</button>
-                </form>
-            </div>
-        </section>
+<!-- Contact Section
+<section id="contact" class="contact py-24 bg-gray-900">
+    <div class="container mx-auto px-8 text-center">
+        <h2 class="text-6xl font-bold font-roboto mb-16 text-indigo-400">Contact Me</h2>
+        <p class="text-xl font-light text-gray-300 mb-8">Feel free to reach out if you're interested in working with me or just want to connect.</p>
+        Contact Form -->
+        <!-- <form action="process_form.php" method="POST" class="max-w-md mx-auto">
+            <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 mb-4 bg-gray-900 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400">
+            <input type="email" name="email" placeholder="Your Email" required class="w-full p-3 mb-4 bg-gray-900 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400">
+            <textarea name="message" placeholder="Your Message" required class="w-full p-3 mb-4 bg-gray-900 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"></textarea>
+            <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">Send Message</button>
+        </form>
+    </div>
+</section> -->
+
     </main>
 
 <!-- Footer Section -->
@@ -463,8 +464,8 @@
                 // Initialize Typed.js for the typing effect
                 var typed = new Typed('#typed-text', {
                     strings: ["Bright Ideas, Brighter Smiles!", "Curious Mind, Always Learning", "Always Asking 'What’s Next?'"],
-                    typeSpeed: 180,
-                    backSpeed: 70,
+                    typeSpeed: 150,
+                    backSpeed: 50,
                     backDelay: 2000, // Adds a 2-second pause before deleting
                     loop: true,
                     smartBackspace: true
